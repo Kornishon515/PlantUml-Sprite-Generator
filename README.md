@@ -2,6 +2,28 @@
 
 Small python program to create PlantUml sprites.
 
+## Usage
+
+### 1. Install dependencies:
+
+You should create en venv first but it isn't necessary it.
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Run with default values:
+
+```bash
+python plantuml-sprite-generator.py
+```
+
+### 3. Run with custom parameters:
+
+```bash
+python plantuml-sprite-generator.py --url myimage.png --width 64 --height 64 --output result.txt
+```
+
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCB9888888888888888888888888889DEEECBCCCA88888888BEEEEDA8888888888ADEEEEA888888888899888888888888
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC9888888888888888888888888888AEEEEDCCCCA88888889DEEEEC98888888888ADEEEEA8888888889BC988888888888
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCA8888888888888888888888888889CEEEEDCCCCA8888888BEEEEEA88888888888ADEEEEA8888888889CEC98888888888

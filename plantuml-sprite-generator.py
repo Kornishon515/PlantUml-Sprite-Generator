@@ -1,5 +1,7 @@
+import argparse
 from PIL import Image
 import numpy as np
+import os
 
 def image_to_hex4bits(input_image_path, width, height, output_txt_path):
     img = Image.open(input_image_path).convert("RGBA") 
@@ -21,7 +23,16 @@ def image_to_hex4bits(input_image_path, width, height, output_txt_path):
     
     print(f"Saved as : {output_txt_path}")
 
-# Exemple d'utilisation
 if __name__ == "__main__":
-    image_name = "input.png"
-    image_to_hex4bits(image_name, 128, 128, f"{image_name[:-4]}_hex.txt") # This is ugly but I don't care 
+    parser = argparse.ArgumentParser(description="Convert image to hex 4-bit grayscale.")
+    parser.add_argument('--url', type=str, default="input.png", help="Path to input image")
+    parser.add_argument('--width', type=int, default=128, help="Output image width")
+    parser.add_argument('--height', type=int, default=128, help="Output image height")
+    parser.add_argument('--output', type=str, help="Path to output text file")
+
+    args = parser.parse_args()
+
+    image_name = args.url
+    output_name = args.output if args.output else f"{os.path.splitext(image_name)[0]}_hex.txt"
+
+    image_to_hex4bits(image_name, args.width, args.height, output_name)
