@@ -25,14 +25,14 @@ def image_to_hex4bits(input_image_path, width, height, output_txt_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Convert image to hex 4-bit grayscale.")
-    parser.add_argument('--url', type=str, default="input.png", help="Path to input image")
+    parser.add_argument('--path', type=str, default="input.png", help="Path to input image")
     parser.add_argument('--width', type=int, default=128, help="Output image width")
     parser.add_argument('--height', type=int, default=128, help="Output image height")
     parser.add_argument('--output', type=str, help="Path to output text file")
 
     args = parser.parse_args()
 
-    image_name = args.url
+    image_name = args.path
     output_name = args.output if args.output else f"{os.path.splitext(image_name)[0]}_hex.txt"
 
     image_to_hex4bits(image_name, args.width, args.height, output_name)

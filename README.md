@@ -21,7 +21,7 @@ python plantuml-sprite-generator.py
 ### 3. Run with custom parameters:
 
 ```bash
-python plantuml-sprite-generator.py --url myimage.png --width 64 --height 64 --output result.txt
+python plantuml-sprite-generator.py --path myimage.png --width 64 --height 64 --output result.txt
 ```
 
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCB9888888888888888888888888889DEEECBCCCA88888888BEEEEDA8888888888ADEEEEA888888888899888888888888
